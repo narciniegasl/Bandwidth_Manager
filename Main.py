@@ -9,7 +9,7 @@ def scan(ip):
     ether = Ether(dst="ff:ff:ff:ff:ff:ff") #Se crea una trama Ethernet con la direcciónde difusión  todos los dispositivos en la red
     packet = ether/arp #Combina Trama Ethernet y Paquete ARP:
 
-    result = srp(packet, timeout=3, verbose=0)[0] #srp envía el paquete a nivel de enlace y espera respuestas. 
+    result = srp(packet, timeout=5, verbose=0)[0] #srp envía el paquete a nivel de enlace y espera respuestas. 
 
     devices = []
     for sent, received in result:
